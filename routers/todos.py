@@ -21,7 +21,8 @@ def create_todo(todo: schemas.ToDoRequest, db: Session = Depends(get_db)):
     todo = crud.create_todo(db, todo)
     return todo
 
-@router.get("", response_model=List[schemas.ToDoResponse])
+@router.get("/todos", response_model=List[schemas.ToDoResponse])
+@router.get("/todos/", response_model=List[schemas.ToDoResponse])
 def get_todos(completed: bool = None, db: Session = Depends(get_db)):
     todos = crud.read_todos(db, completed)
     return todos
