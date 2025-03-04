@@ -25,7 +25,7 @@ app.include_router(todos.router)
 # CORS configuration, needed for frontend development
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "https://002-nextjs-frontend-todo-app-lovat.vercel.app/"],  # URL del frontend
+    allow_origins=["https://002-nextjs-frontend-todo-app.vercel.app/"],  # URL del frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
